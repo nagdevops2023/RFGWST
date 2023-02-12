@@ -1,0 +1,166 @@
+SCM/version control tools:
+-------
+git -- Linux author implementation on 2005
+
+it is open source and command line (CLI and GUI).
+Can capture logs very easily..who all are changes and modify the files ..
+branching strategy
+easy to manage and safe and secure
+it was implemented from c-language
+
+functionality:
+
+install the git in our local machine..
+
+Github, bitbucket and Gerrit are central account/repositories,,
+
+we will push the data to the central account [GitHub, Bitbucket or Gerrit]
+
+As devops engineer need to track logs..
+
+developer which is implement the code they will move to central repository and who are updated data that need to pull in local machine..
+
+To create files in local machine then upload the central repository to whom we will give access they all are can access..
+There is no tracking for share drive
+
+will differnt different releases..
+
+type git download in web -- https://git-scm.com/downloads
+
+windows -- 2.39.1 version
+
+MacOS-- who all are using mac os they need to install first Homebrew app.
+
+For Linux server installation git software: [ in Linux also different flavours are there]
+
+Debian/Ubunt OS
+To hit the command--> apt-get install git
+
+Fedora/
+cent os
+To hit the command --> yum install git and yum install git -y and if we want to remove yum remove git -y.
+
+yum :
+when we use yum command (by default yum repository added to linux machine.it is having some standard versions like java, maven and git, httpd ) automatically
+download software no need to download specifically just yum install command is fine to download on linux.
+
+If files are not there in yum repository then need to download like in windows .exe then in Linux rpm files.
+
+
+1. git init command use for git initialisation when we execute this command .git hidden file will be created it pertaining to git software config
+files..
+To initialise the empty git repository
+.git directory will be created in there will be created cfg files related git repository.
+
+2. After git initialisation we need to configure our user name or email id.
+git config --global user.name "bhupathi nageswarrao"
+git config --global user.email "bhupathi.sasai2020@gmail.com"
+git config --list
+
+if we want to change name or email need to use same commands only.
+
+To removing user and email.
+git config --global --unset user.name
+git config --global --unset user.email
+
+GIT having three phases..
+1.Workspace
+2.staging or index area
+3.Local repository
+
+
+GIT having three 3 stages
+
+1. work space:
+
+  which refers which is Create or modify the file/data that is goes to default in workspace.
+
+via git status command we can see data of workspace stage area..
+
+to view hidden files via ls -a 
+
+we can identify like untracked files and it shows red color
+
+To move file/data to stage 2 via commnd-- git add filename or git add .,git add .A or git add *
+
+Note: When we hit git status command if files are shown red color they are in Workspace phase and if they are green color they are in Staging/Index area.
+
+2. Staging/index:
+
+  it is called intermidiary area. it uses for all trucking info willbe added here like  who is author and user name nd mail details, time
+stamp and purpose of commit and diffes b/w and current file.
+
+In this stage also we can use git status command get it details what are the files to be commit.
+it will be shows green color
+
+to push to Local repository via command git commit -m (means message) "label" which means purpose of actvity.
+
+If we want to move single file from staging area to local repository then we need to give filename git commit -m "testing" file1 (filename). orelse without filename
+all files are moved to local repository.
+
+3. Local repository:
+
+  If we want to push/upload the data/files to central repository like bibucket/github before it has to be in Local repository other wise it can't
+able move to data in central repository.
+
+we can check with git log what are files are pending/ available in local repository..
+In log we can not see file names directly we can see commit id then we can use command git show commit id then we can see file names
+
+git log [ can see commit id's]
+
+git show cid[86231869595f91ac92a5535c9947318815eef444] for can view file details 
+
+
+To reverse file from staging area to workspace area:
+
+git reset head filename
+
+To reverse file from local repository to staging/index area:
+
+git reset --soft cid (commit id) n-1
+git log
+git status
+
+Local repository to workspace: [Note: condition apply while we are moving from Local reposit to workspace, from staging files also move to workspace]
+
+git reset --mixed cid  then git status
+
+From workspace to local repository not possible to move for new files but modified files can be moved.
+git commit -m "label" filename
+
+to delete the commit id files:
+git reset --hard cid (n-1)
+git log
+
+github - repository
+--------
+
+To create owner/repository in central account/github and it will be clone our local machine and then we will push the implement code to central account.
+
+public and private..
+
+if we select public we can give access to any one to read data but Private only for can give three people if we want to give above people have to pay github team.
+
+
+git clone https://github.com/bhupathitcs/Batch79.git
+
+ls
+cd Batch79
+ls
+touch filename
+git status
+git add .
+git commit -m "label"
+git push [to Cental repository]
+
+Note:Incase if we get error while push need to check the error and follow the below step
+
+when some one push the files to cetral repository then another one has to git pull command via this the data is pull from cetral repository to local machine.
+
+
+git pull
+then git push
+
+collaboration access:
+
+go to settings and then click collaborators and add access them
